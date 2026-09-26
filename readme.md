@@ -1,35 +1,16 @@
-# Projeto de Classificação de Imagens com ResNet50 e TensorFlow
+# CIFAR-10 ResNet50 Classifier
 
-Este projeto utiliza TensorFlow e a arquitetura de rede neural ResNet50 para criar um modelo de classificação de imagens eficiente e robusto, aplicado ao conjunto de dados CIFAR-10.
+![Python](https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white)
 
-## Visão Geral do Projeto
-O objetivo deste projeto é construir e treinar um modelo de rede neural convolucional (CNN) para reconhecer e categorizar imagens do conjunto de dados CIFAR-10, que inclui 60.000 imagens em 10 classes diferentes.
+A small image-classification example that fine-tunes a ResNet50 model on the CIFAR-10 dataset using TensorFlow. The script trains the model, evaluates it on the test split, and reports classification metrics.
 
-## Pré-requisitos
-- Python 3.6 ou superior
-- Bibliotecas TensorFlow, NumPy, Matplotlib, Seaborn, Scikit-learn
+## Run locally
 
-## Instalação
-Para instalar as bibliotecas necessárias, execute:
+Install the dependencies and start the training script:
+
+```bash
 pip install tensorflow numpy matplotlib seaborn scikit-learn
+python main.py
+```
 
-## Estrutura do Código
-O código está estruturado da seguinte forma:
-- Carregamento e pré-processamento do conjunto de dados CIFAR-10
-- Construção do modelo utilizando a arquitetura ResNet50
-- Compilação e treinamento do modelo
-- Fine-tuning de algumas camadas da ResNet50
-- Avaliação do modelo usando o conjunto de teste
-- Geração de matrizes de confusão e relatórios de classificação para análise do desempenho
-
-## Características do Modelo
-- **Arquitetura de Rede**: ResNet50
-- **Regularização**: Dropout e Regularização L2
-- **Função de Perda**: Sparse Categorical Crossentropy
-
-## Treinamento do Modelo
-O modelo é inicialmente treinado com as camadas da ResNet50 congeladas, seguido por um processo de fine-tuning nas últimas camadas para melhor ajuste aos dados CIFAR-10.
-
-## Avaliação e Análise
-- **Matriz de Confusão**: Visualização da performance do modelo em classificar cada classe.
-- **Relatório de Classificação**: Métricas detalhadas como precisão, recall e F1-scor
+TensorFlow downloads CIFAR-10 when the dataset is first requested. The model uses ImageNet weights as its starting point.
